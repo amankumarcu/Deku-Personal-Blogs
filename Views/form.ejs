@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/form.css">
+
+<%- include("partials/header.ejs")  %> 
+<div class="page">
+<div class="content">
+<form class="form-outer" action="/submit-blog" method="post">
+    <input class="write" required name="title" type="text" placeholder="Enter your title">
+    <input class="write" required name="desc" type="text" placeholder="Enter your description">
+    <textarea class="write blogarea" required name="blog" rows = 12 placeholder="Write your blog here"></textarea>
+    <div class="submitcentre">
+    <input class="submit" type="submit">
+    </div>
+
+</form>
+</div>
+</div>
+<%- include("partials/footer.ejs") %>

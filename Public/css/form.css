@@ -1,0 +1,30 @@
+.form-outer{
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+    margin: 20px 40px;
+}
+.write{
+    margin: 5px 5px;
+    padding: 20px 15px;
+    font-size: 20px;
+}
+.submit{
+    color: #553986;
+    font-family: "Home Video";
+    background-color: white;
+    border-color: #553986;
+    font-size: 40px;
+    width: 200px;
+    border-radius: 10px;
+}
+.submit:hover{
+     color: white;
+    background-color: #553986;
+    border-color: white;
+}
+.submitcentre{
+    display: flex;
+    justify-content: center;
+}

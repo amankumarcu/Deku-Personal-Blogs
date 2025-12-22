@@ -1,0 +1,38 @@
+
+.outer{
+    display: flex;
+    flex-direction: row;        /* default, keeps items in one line */
+    gap: 40px;
+    padding: 20px;
+    flex-wrap: wrap;    /* ✅ allows next line */
+    justify-content: center;
+    border: 3px dotted white;
+    margin: 10px 50px;
+    border-radius: 20px;
+    
+}
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-fluid{
+   margin: 10px 20px;
+}
+h1.MainHead{
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: "Home Video";
+    font-size: 80px;
+}
+.card-link{
+    color: white;
+    text-decoration: none;
+    background-color: #553986;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+

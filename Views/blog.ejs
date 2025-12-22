@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+    <%- include("partials/header.ejs")  %>\
+    <div class="page">
+        <div class="content">
+            <div class="outer-blog">
+                <h1 class="blog title"><%= title %></h1>
+                <h5 class="blog desc"><%= desc %></h5>
+                <p class="blog textInput"><%= content %></p>
+            </div>
+        </div>
+    <%- include("partials/footer.ejs")  %>    
+    </div>
+</body>
+</html>

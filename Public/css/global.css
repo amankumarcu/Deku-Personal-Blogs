@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #0f172a, #020617);
+}
+
+.page {
+    height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.content{
+    flex: 1;
+}

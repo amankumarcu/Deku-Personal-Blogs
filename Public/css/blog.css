@@ -1,0 +1,19 @@
+.blog{
+    color: white;
+    text-align: center;
+    font-family: "Home Video";
+}
+.textInput{
+    background-color: white;
+    color: #553986;
+    margin: 20px 40px;
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 20px 20px;
+}
+.title{
+    font-size: 70px;
+}
+.desc{
+    margin-bottom: 20px;
+}
