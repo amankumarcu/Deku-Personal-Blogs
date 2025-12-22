@@ -62,34 +62,35 @@ node index.js
 ```bash
 http://localhost:3000
 ```
-##⚠️ Limitations
 
--Blog data is stored in memory and resets when the server restarts
--No database integration
--No user authentication or authorization
--No edit or delete functionality
--Not suitable for production use in its current state
+## ⚠️ Limitations
 
-##🔮 Future Enhancements
+- Blog data is stored in memory and resets when the server restarts
+- No database integration
+- No user authentication or authorization
+- No edit or delete functionality
+- Not suitable for production use in its current state
 
--Integrate a database (MongoDB / MySQL) for persistence
--Add user authentication and role-based authorization
--Implement edit and delete blog features
--Add pagination and search functionality
--Improve UI/UX and responsiveness
--Add server-side and client-side validation
--Introduce error handling and logging
+## 🔮 Future Enhancements
 
-##📚 Learning Outcomes
+- ntegrate a database (MongoDB / MySQL) for persistence
+- Add user authentication and role-based authorization
+- Implement edit and delete blog features
+- Add pagination and search functionality
+- Improve UI/UX and responsiveness
+- Add server-side and client-side validation
+- Introduce error handling and logging
 
--Practical understanding of Express routing (GET, POST)
--Handling form data and request bodies
--Generating and using slugs for dynamic URLs
--Server-side rendering using EJS
--Difference between server-side and client-side JavaScript
--Serving static assets in an Express application
+## 📚 Learning Outcomes
 
-##👤 Author
+- Practical understanding of Express routing (GET, POST)
+- Handling form data and request bodies
+- Generating and using slugs for dynamic URLs
+- Server-side rendering using EJS
+- Difference between server-side and client-side JavaScript
+- Serving static assets in an Express application
 
-Aman Kumar
-Aspiring Full-Stack Developer
+## 👤 Author
+
+- Aman Kumar
+(Aspiring Full-Stack Developer)
