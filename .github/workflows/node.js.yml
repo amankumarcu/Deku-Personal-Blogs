@@ -27,4 +27,4 @@ jobs:
         run: npm install
 
       - name: Run app check
-        run: node app.js
+        run: node index.js
