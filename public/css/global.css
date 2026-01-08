@@ -1,17 +1,37 @@
+/* Reset */
 *{
     margin: 0;
     padding: 0;
-}
-body{
     box-sizing: border-box;
-    background: linear-gradient(135deg, #0f172a, #020617);
 }
 
-.page {
-    height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* Body */
+body{
+    background: linear-gradient(135deg, #0f172a, #020617);
+    min-height: 100vh;
+    overflow-x: hidden; /* prevent horizontal scroll on mobile */
 }
+
+/* Page wrapper */
+.page{
+    min-height: 100vh;        /* safer than height */
+    min-height: 100dvh;       /* modern mobile browsers */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content */
 .content{
-    flex: 1;
+    flex: 1 0 auto;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px){
+    body{
+        background-attachment: fixed; /* smoother scrolling */
+    }
+
+    .page{
+        min-height: 100dvh;
+    }
 }

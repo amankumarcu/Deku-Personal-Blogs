@@ -1,19 +1,59 @@
+/* Default styles (desktop / tablet) */
 .blog{
     color: white;
     text-align: center;
     font-family: "Home Video";
 }
+
 .textInput{
     background-color: white;
     color: #553986;
     margin: 20px 40px;
     border-radius: 10px;
     font-size: 30px;
-    padding: 20px 20px;
+    padding: 20px;
 }
+
 .title{
     font-size: 70px;
 }
+
 .desc{
     margin-bottom: 20px;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .blog{
+        padding: 10px;
+    }
+
+    .textInput{
+        margin: 12px 16px;
+        font-size: 18px;
+        padding: 14px;
+        border-radius: 8px;
+    }
+
+    .title{
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .desc{
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .textInput{
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .title{
+        font-size: 30px;
+    }
 }

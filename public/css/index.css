@@ -1,24 +1,27 @@
-
+/* Desktop / default */
 .outer{
     display: flex;
-    flex-direction: row;        /* default, keeps items in one line */
+    flex-direction: row;
     gap: 40px;
     padding: 20px;
-    flex-wrap: wrap;    /* ✅ allows next line */
+    flex-wrap: wrap;
     justify-content: center;
+
     border: 3px dotted white;
     margin: 10px 50px;
     border-radius: 20px;
-    
 }
-.card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .container-fluid{
-   margin: 10px 20px;
+    margin: 10px 20px;
 }
+
 h1.MainHead{
     color: white;
     text-align: center;
@@ -26,6 +29,7 @@ h1.MainHead{
     font-family: "Home Video";
     font-size: 80px;
 }
+
 .card-link{
     color: white;
     text-decoration: none;
@@ -34,5 +38,63 @@ h1.MainHead{
     border-radius: 5px;
     border: 1px solid black;
 }
+/* =========================
+   MOBILE NAVBAR FIX
+========================= */
 
+@media (max-width: 768px) {
 
+  .navbar .container-fluid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-brand{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 22px;
+  }
+
+  .navbar-collapse{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .upbtn{
+    display: block;
+    margin: 0 auto;
+    padding: 10px 18px;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+  h1.MainHead{
+    font-size: 42px;
+    padding: 16px 12px;
+    line-height: 1.2;
+    text-align: center;
+  }
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+  .navbar-brand{
+    font-size: 18px;
+  }
+
+  .upbtn{
+    width: 100%;
+    max-width: 240px;
+  }
+
+  h1.MainHead{
+    font-size: 32px;
+    padding: 12px 10px;
+  }
+}

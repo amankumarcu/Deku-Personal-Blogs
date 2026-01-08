@@ -1,38 +1,95 @@
+/* =========================
+   Desktop / Default
+========================= */
+
 .glass-navbar {
-  background: rgba(255, 255, 255, 0.03);   /* translucent */
-  backdrop-filter: blur(12px);             /* glass blur */
-  -webkit-backdrop-filter: blur(12px);     /* Safari support */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-  z-index: 1050; /* stay above content */
+  z-index: 1050;
 }
-.upbtn{
-    color: #553986;
-    font-family: "Home Video";
-    background-color: white;
-    border-color: #553986;
-    font-size: 20px;
-}
-.upbtn:hover, .upbtn:active{
-    color: white;
-    background-color: #553986;
-    border-color: white;
-}
-.navbar-brand{
-    color: #ffffff;
-    font-family: "Home Video";
-    font-size: 30px;
-    
-    
-}
+
 .container-fluid{
-   margin: 10px 20px;
+  margin: 10px 20px;
 }
+
+.navbar-brand{
+  color: #ffffff;
+  font-family: "Home Video";
+  font-size: 30px;
+}
+
 a.navbar-brand:hover{
-    color: #ffffff;
-    
+  color: #ffffff;
 }
+
 .svg{
-    margin-right: 10px;
-    background-color: #ffffff;
+  margin-right: 10px;
+  background-color: #ffffff;
+}
+
+.upbtn{
+  color: #553986;
+  font-family: "Home Video";
+  background-color: white;
+  border: 2px solid #553986;
+  font-size: 20px;
+}
+
+.upbtn:hover,
+.upbtn:active{
+  color: white;
+  background-color: #553986;
+  border-color: white;
+}
+
+/* =========================
+   Tablet & Mobile
+========================= */
+
+@media (max-width: 768px) {
+
+  .container-fluid{
+    margin: 8px 14px;
+  }
+
+  .navbar-brand{
+    font-size: 22px;
+  }
+
+  /* CENTER BUTTON */
+  .navbar-collapse{
+    display: flex;
+    justify-content: center;
+  }
+
+  .upbtn{
+    font-size: 16px;
+    padding: 8px 14px;
+    white-space: nowrap;
+  }
+
+  .svg{
+    margin-right: 6px;
+  }
+}
+
+/* =========================
+   Small Mobile Devices
+========================= */
+
+@media (max-width: 480px) {
+
+  .navbar-brand{
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .upbtn{
+    font-size: 15px;
+    padding: 10px 18px;
+  }
 }

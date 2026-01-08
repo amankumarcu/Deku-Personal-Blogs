@@ -1,40 +1,89 @@
+/* Desktop / default */
 .footer-container{
-    display: flex;
-    justify-content: space-between; /* pushes left & right apart */
-  align-items: center;             /* vertical alignment */
-  background: rgba(255, 255, 255, 0.03);   /* translucent */
-  backdrop-filter: blur(12px);             /* glass blur */
-  -webkit-backdrop-filter: blur(12px);     /* Safari support */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+
   padding: 40px 50px;
   padding-top: 100px;
-
 }
-.right {
+
+.left{
+  width: 45%;
+}
+
+.right{
   margin-left: auto;
   margin-right: 40px;
-  
 }
-.left{
-    width:45%
-}
+
 h4{
-    color: white;
-    font-family: "Home Video";
-    font-size: 20px;
+  color: white;
+  font-family: "Home Video";
+  font-size: 20px;
 }
+
 .btm{
-    color: white;
-    text-decoration: none;
-    background-color: #553986;
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: 1px solid white;
-    font-family: "Home Video";
+  color: white;
+  text-decoration: none;
+  background-color: #553986;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid white;
+  font-family: "Home Video";
 }
+
 .btm:hover{
-    color: #553986;
-    background-color: white;
-    border: 1px solid black;
+  color: #553986;
+  background-color: white;
+  border: 1px solid black;
+}
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+  .footer-container{
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+    padding-top: 60px;
+    gap: 20px;
+  }
+
+  .left{
+    width: 100%;
+  }
+
+  .right{
+    margin: 0;
+  }
+
+  h4{
+    font-size: 16px;
+  }
+
+  .btm{
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  h4{
+    font-size: 14px;
+  }
+
+  .btm{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 0;
+  }
 }
