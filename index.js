@@ -5,7 +5,6 @@ import pg from "pg";
 const {Pool} = pg;
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 dotenv.config();
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL
@@ -68,6 +67,31 @@ app.get("/blog/:slug",async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+app.post("/update/:slug",async(req,res)=>{
+  const slug = req.body.id;
+  try{
+    res.render("update.ejs",{
+      id : req.body.id,
+      title: req.body.title,
+      content: req.body.content
+    })
+  }catch(err){
+    console.error(err);
+  }
+});
+
+app.post("/updated/:slug",async(req,res)=>{
+  const slug = req.body.id;
+  const title = req.body.title;
+  const content = req.body.content;
+  try{
+    const result = await pool.query("update blogs set title = $1, blogtext = $2 where id = $3 returning *",[title,content,slug]);
+    console.log(result.row);
+    res.redirect(`/blog/${slug}`);
+  }catch(err){
+    console.error(err);
+  }
+});
+app.listen(process.env.PORT, () => {
+  console.log(`Listening on port ${process.env.PORT}`);
 });

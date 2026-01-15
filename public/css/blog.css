@@ -21,6 +21,9 @@
 .desc{
     margin-bottom: 20px;
 }
+.hidden {
+  display: none;
+}
 
 /* Mobile view */
 @media (max-width: 768px) {
@@ -34,7 +37,7 @@
         padding: 14px;
         border-radius: 8px;
     }
-
+    
     .title{
         font-size: 36px;
         line-height: 1.2;
