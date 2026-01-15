@@ -14,39 +14,19 @@
 <h1 class="MainHead"> Read your blogs below ↴</h1>
 <div class="content">
   <div class="outer">
-  <% for(let i=blogs.length-1; i>=0; i--) { %>
+  <% for(let i=0; i<blogs.length; i++) { %>
   <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h4 class="card-title"><%= blogs[i][1] %></h4>
-    <p class="card-text"><%= blogs[i][2] %></p>
-    <a href="/blog/<%=blogs[i][0]%>" class="card-link">Read More</a>
+    <h4 class="card-title"><%= blogs[i].title %></h4>
+    <p class="card-text"><%= blogs[i].datetime %></p>
+    <a href="/blog/<%=blogs[i].id%>" class="card-link">Read More</a>
+    <form class = "delete" action="/delete" method="post">
+    <input type="hidden" name="id" value="<%= blogs[i].id %>">
+    <button class="card-link" style="background-color: red;">Delete</button>
+    </form>
   </div>
   </div>
   <% }; %>
-
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h4 class="card-title">Sample Blog</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="/blog/sample" class="card-link">Read More</a>
-  </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h4 class="card-title">Sample Blog</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="/blog/sample" class="card-link">Read More</a>
-  </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h4 class="card-title">Sample Blog</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="/blog/sample" class="card-link">Read More</a>
-  </div>
-  </div>
 </div>
 </div>
 <%- include("partials/footer.ejs")%>
