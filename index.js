@@ -1,62 +1,99 @@
 import express from "express";
 import bodyParser from "body-parser";
+import dotenv from "dotenv";
+import pg from "pg";
+const {Pool} = pg;
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-const blogs = [];
+dotenv.config();
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false }
 
-// // REQUIRED
-// app.set("view engine", "ejs");
-// app.set("views", "./views");
+});
+
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  res.render("index.ejs", { blogs });
+app.get("/",async (req, res) => {
+  try{
+    const result = await pool.query("select * from blogs order by datetime desc");
+    const blogs = result.rows;
+    res.render("index.ejs", {blogs});
+  }catch(err){
+    console.error(err);
+  }
 });
 
 app.get("/create", (req, res) => {
   res.render("form.ejs");
 });
 
-app.get("/blog/sample", (req, res) => {
-  res.render("sample.ejs");
-});
+app.post("/delete", async (req,res)=>{
+  try{
+    const del = await pool.query("delete from blogs where id = $1 returning *",[req.body.id]);
+    console.log(del.rows);
+    res.redirect("/");
 
-app.post("/submit-blog", (req, res) => {
-  const slug = req.body.title
-    .trim()
-    .replace(/\s+/g, "-")
-    .toLowerCase();
-
-  const blog = [
-    slug,
-    req.body.title,
-    req.body.desc,
-    req.body.blog
-  ];
-
-  blogs.push(blog);
-  res.redirect(`/blog/${slug}`);
-});
-
-app.get("/blog/:slug", (req, res) => {
-  const slug = req.params.slug;
-  const index = blogs.findIndex(blog => blog[0] === slug);
-
-  if (index === -1) {
-    return res.status(404).send("Blog not found");
+  }catch(err){
+  console.error(err);
   }
+})
 
-  res.render("blog.ejs", {
-    slug: blogs[index][0],
-    title: blogs[index][1],
-    desc: blogs[index][2],
-    content: blogs[index][3]
-  });
+app.post("/submit-blog",async (req, res) => {
+  try{
+    const result = await pool.query("Insert into blogs(title,blogtext) values($1,$2)returning id",[req.body.title,req.body.blog]);
+    const slug = result.rows[0].id;
+    res.redirect(`/blog/${slug}`);
+  }catch(err){
+    console.error(err);
+  }
+  
 });
 
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+app.get("/blog/:slug",async (req, res) => {
+  try{
+    const slug = req.params.slug;
+    const result = await pool.query("select * from blogs where id = $1",[slug]);
+    const blog = result.rows;
+    console.log(blog);
+    res.render("blog.ejs", {
+    slug: blog[0].id,
+    title: blog[0].title,
+    desc: blog[0].datetime,
+    content: blog[0].blogtext
+  });
+  }catch(err){
+    console.error(err);
+  }
+});
+
+app.post("/update/:slug",async(req,res)=>{
+  const slug = req.body.id;
+  try{
+    res.render("update.ejs",{
+      id : req.body.id,
+      title: req.body.title,
+      content: req.body.content
+    })
+  }catch(err){
+    console.error(err);
+  }
+});
+
+app.post("/updated/:slug",async(req,res)=>{
+  const slug = req.body.id;
+  const title = req.body.title;
+  const content = req.body.content;
+  try{
+    const result = await pool.query("update blogs set title = $1, blogtext = $2 where id = $3 returning *",[title,content,slug]);
+    console.log(result.row);
+    res.redirect(`/blog/${slug}`);
+  }catch(err){
+    console.error(err);
+  }
+});
+app.listen(process.env.PORT, () => {
+  console.log(`Listening on port ${process.env.PORT}`);
 });

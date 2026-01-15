@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/form.css">
+
+<%- include("partials/header.ejs") %>
+
+<div class="page">
+  <div class="content">
+    <form class="form-outer" action="/updated/<%= id %>" method="post">
+
+      <input
+        class="write"
+        required
+        name="title"
+        type="text"
+        value="<%= title %>"
+      >
+
+      <input type="hidden" name="id" value="<%= id %>">
+
+      <textarea
+        class="write blogarea"
+        required
+        name="content"
+        rows="12"><%= content %></textarea>
+
+      <div class="submitcentre">
+        <button class="submit" type="submit">Save</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

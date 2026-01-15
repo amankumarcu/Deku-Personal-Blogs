@@ -29,9 +29,16 @@ h1.MainHead{
     font-family: "Home Video";
     font-size: 80px;
 }
-
+.card-text{
+  min-width: 100px;
+  min-height: 80px;
+}
+.delete{
+  display: inline-block;
+}
 .card-link{
     color: white;
+    display: inline-block;
     text-decoration: none;
     background-color: #553986;
     padding: 5px 10px;

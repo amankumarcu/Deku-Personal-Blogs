@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/form.css">
     <link rel="stylesheet" href="/css/blog.css">
 </head>
 <body>
@@ -15,6 +16,14 @@
                 <h1 class="blog title"><%= title %></h1>
                 <h5 class="blog desc"><%= desc %></h5>
                 <p class="blog textInput"><%= content %></p>
+                <div class="submitcentre">
+                    <form action="/update/<%=slug%>" method="post">
+                        <input hidden="true" name="id" value="<%= slug %>">
+                        <input hidden="true" name="title" value="<%= title %>">
+                        <input hidden="true" name="content" value="<%= content %>">
+                    <button class="submit"  type="submit">Update</button>
+                    </form>
+                </div>
             </div>
         </div>
     <%- include("partials/footer.ejs")  %>    
