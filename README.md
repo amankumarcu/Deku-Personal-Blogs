@@ -68,25 +68,32 @@ The application uses a **Supabase-hosted PostgreSQL database** for persistent da
 
 ---
 
-## 🔐 Environment Variables
-
-Create a `.env` file in the project root:
-
-```env
-DATABASE_URL=your_supabase_postgres_connection_string
-```
-
 ## ▶️ Getting Started
+
+### Fork the repository
+
+1. Visit the repository:
+   https://github.com/amankumarcu/Deku-Personal-Blogs
+2. Click the **Fork** button at the top-right corner.
+3. A copy of the repository will be created in your GitHub account.
 
 ### Clone the repository
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/<your-username>/Deku-Personal-Blogs.git
 ```
 
 
 ### Install dependencies
 ```bash
 npm install
+```
+
+### 🔐 Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+DATABASE_URL=your_supabase_postgres_connection_string
 ```
 
 ###Run the application
