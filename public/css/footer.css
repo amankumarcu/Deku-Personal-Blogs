@@ -16,7 +16,7 @@
 }
 
 .left{
-  width: 45%;
+  width: 30%;
 }
 
 .right{
@@ -27,6 +27,7 @@
 h4{
   color: white;
   font-family: "Home Video";
+  margin-bottom: 10px;
   font-size: 20px;
 }
 

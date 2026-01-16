@@ -1,17 +1,19 @@
 /* Default styles (desktop / tablet) */
 .blog{
     color: white;
-    text-align: center;
-    font-family: "Home Video";
+    margin: 20px 80px;
+    text-align: left;
+    font-family: "Inter", "Roboto", sans-serif;
 }
 
 .textInput{
     background-color: white;
     color: #553986;
-    margin: 20px 40px;
+    text-align: left;
+    white-space: pre-line;
     border-radius: 10px;
     font-size: 30px;
-    padding: 20px;
+    padding: 40px;
 }
 
 .title{
@@ -19,7 +21,12 @@
 }
 
 .desc{
-    margin-bottom: 20px;
+    display: inline-block;
+    color: #553986;
+    background-color: white;
+    margin-bottom: 40px;
+    padding: 10px 10px;
+    border-radius: 5px;
 }
 .hidden {
   display: none;
