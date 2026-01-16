@@ -5,9 +5,8 @@
     gap: 40px;
     padding: 20px;
     flex-wrap: wrap;
-    justify-content: center;
-
-    border: 3px dotted white;
+    justify-content: start;
+    font-family: "Inter", "Roboto", sans-serif;
     margin: 10px 50px;
     border-radius: 20px;
 }
@@ -24,14 +23,18 @@
 
 h1.MainHead{
     color: white;
-    text-align: center;
+    text-align: left;
+    padding-top: 40px !important;
     padding: 20px;
-    font-family: "Home Video";
-    font-size: 80px;
+    margin: 0px 50px;
+    font-family: "Inter", "Roboto", sans-serif;
+    font-size: 40px;
 }
-.card-text{
+
+.card-text,.card-title{
   min-width: 100px;
   min-height: 80px;
+  font-family: "Inter", "Roboto", sans-serif;
 }
 .delete{
   display: inline-block;
@@ -83,6 +86,10 @@ h1.MainHead{
     line-height: 1.2;
     text-align: center;
   }
+  .outer{
+    justify-content: center;
+    margin: 10px;
+  }
 }
 
 /* =========================
@@ -103,5 +110,9 @@ h1.MainHead{
   h1.MainHead{
     font-size: 32px;
     padding: 12px 10px;
+  }
+  .outer{
+    justify-content: center;
+    margin: 10px;
   }
 }
